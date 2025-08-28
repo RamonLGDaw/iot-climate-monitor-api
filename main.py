@@ -6,17 +6,17 @@ from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
 
-origins = [
-    "*",
-  
+ALLOWED_ORIGINS = [
+    "http://localhost:5173",                 # dev Vite
+    "https://control-clima-front.vercel.app",   # prod front
 ]
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_origins=ALLOWED_ORIGINS,
+    allow_credentials=True,                  # ok si apuntas a orígenes concretos
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "X-API-Key"],
 )
 
 
