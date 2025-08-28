@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.pytest_cache/
+.mypy_cache/
+
+# Entornos
+.venv/
+env/
+venv/
+
+# VCS
+.git
+.gitignore
+
+# Config local / secretos
+.env
+*.env
+
+# Frontend / otros
+node_modules/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
