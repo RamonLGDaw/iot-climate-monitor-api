@@ -7,7 +7,9 @@ from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
 ALLOWED_ORIGINS = [
-    "https://io-t-climate-monitor-front.vercel.app" 
+    "https://io-t-climate-monitor-front.vercel.app",
+    "*" 
+
 ]
 
 app.add_middleware(
