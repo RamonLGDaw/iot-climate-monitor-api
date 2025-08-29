@@ -22,7 +22,7 @@ def validate_sensor_api_key(api_key: str = Header(..., alias="X-API-Key")):
 
 @sensor.get('/', response_model=list[SensorDataSchemaRead], status_code=status.HTTP_200_OK)
 async def get_all_rows(
-    limit: int = Query(10, ge=1, le=50),
+    limit: int = Query(10, ge=1, le=100),
     offset: int =0, 
     session: AsyncSession = Depends(get_session),
     start: Optional[datetime] = Query(None, description='Start datetime filter'),
