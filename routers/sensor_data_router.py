@@ -24,6 +24,7 @@ def validate_sensor_api_key(api_key: str = Header(..., alias="X-API-Key")):
 async def get_all_rows(
     limit: int = Query(10, ge=1, le=100),
     offset: int =0, 
+    order: str = Query("desc", pattern="^(asc|desc)$"),
     session: AsyncSession = Depends(get_session),
     start: Optional[datetime] = Query(None, description='Start datetime filter'),
     end: Optional[datetime] = Query(None, description='End datetime filter')
@@ -35,7 +36,8 @@ async def get_all_rows(
         offset=offset, 
         session=session, 
         start=start, 
-        end=end)
+        end=end, 
+        order=order)
 
 
 
