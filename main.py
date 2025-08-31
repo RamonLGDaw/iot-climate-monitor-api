@@ -56,9 +56,9 @@ app = FastAPI(
     version="1.0.0",
     openapi_tags=tags_metadata,
     contact={
-        "name": "Ramon Lage",
-        "url": "https://ramonlage-portafolio.vercel.app/",
-        "email": "ramonlagegibert@gmail.com",
+        
+        "url": "https://ramonlage-portafolio.vercel.app/"
+        
     },
     license_info={"name": "MIT"},
     docs_url="/docs",

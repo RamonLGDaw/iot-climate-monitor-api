@@ -100,7 +100,7 @@ sensor = APIRouter(prefix="/sensor", tags=["Sensors"])
 api_key_header = APIKeyHeader(
     name="X-API-Key",
     scheme_name="SensorAPIKey",
-    auto_error=False,  # Para que podamos manejar manualmente el error
+    auto_error=False, 
 )
 
 def validate_sensor_api_key(api_key: Optional[str] = Security(api_key_header)):
